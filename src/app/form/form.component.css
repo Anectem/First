@@ -1,0 +1,48 @@
+.inputDiv {
+    border: groove;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+button {
+    font-weight: normal;
+    font-family: 'Comfortaa', cursive;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(214, 214, 214, 0.3);
+}
+
+button:hover {
+    background-color: #c8d5fc;
+}
+
+button[disabled]:hover {
+    background: rgba(214, 214, 214, 0.3);
+
+}
+
+input {
+    font-family: 'Comfortaa', cursive;
+    padding: 10px;
+    width: 300px;
+    border: groove;
+
+}
+
+input :focus {
+    border: groove #eeeeee;
+}
+
+.listDiv {
+    font-family: 'Comfortaa', cursive;
+    border: groove;
+    margin-left: auto;
+    margin-right: auto;
+    width: 48em;
+    margin-top: 1em;
+    height: 48em;
+    overflow: auto;
+}

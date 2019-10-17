@@ -1,0 +1,8 @@
+    <div class="listDiv">
+        <ul>
+            <li *ngFor="let elem of listArray | translatePipe; let i = index">
+                {{elem}}
+                <button [attr.title]="'demo.deleteButton' | translate" (click)="deleteItem(i)">X</button>
+            </li>
+        </ul>
+    </div>

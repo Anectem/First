@@ -1,0 +1,10 @@
+<div class="inputDiv">
+    <input type="text" [(ngModel)]="text" [attr.placeholder]="'demo.input' | translate" (keydown.enter)=changeHandler()/>
+    <button style="user-focus: none" [disabled]="!text" [attr.title]="'demo.addButtonTitle' | translate" (click)=changeHandler()>
+        {{ 'demo.addButton' | translate }}
+    </button>
+</div>
+<div class="listDiv">
+    <app-list [ngModel]="dataArray"></app-list>
+</div>
+

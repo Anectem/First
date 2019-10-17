@@ -1,0 +1,12 @@
+{
+  "demo": {
+    "langChoice": "Language",
+    "ru": "Russian",
+    "en": "English",
+    "addButton": "Add",
+    "addButtonTitle": "Add element",
+    "input":"Input text here",
+    "noValue":"No value",
+    "deleteButton":"Delete element"
+  }
+}
