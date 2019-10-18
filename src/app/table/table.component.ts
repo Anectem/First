@@ -4,8 +4,8 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
     selector: 'app-list',
-    templateUrl: './list.component.html',
-    styleUrls: ['./list.component.css'],
+    templateUrl: './table.component.html',
+    styleUrls: ['./table.component.css'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
@@ -29,7 +29,7 @@ export class ListComponent implements ControlValueAccessor {
     }
 
     deleteItem(index: number) {
-        this.listArray.splice(index, 1)
+        this.listArray.splice(index, 1);
     }
 
 }

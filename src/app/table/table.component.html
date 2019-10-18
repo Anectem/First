@@ -1,0 +1,13 @@
+<table>
+    <tr *ngFor="let elem of listArray let i = index">
+        <td>
+            {{elem}}
+        </td>
+        <td>
+            {{elem | translatePipe}}
+        </td>
+        <td class="deletecol">
+            <button (click)="deleteItem(i)" [attr.title]="'demo.deleteButton' | translate">X</button>
+        </td>
+    </tr>
+</table>

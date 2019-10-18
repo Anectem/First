@@ -1,5 +1,5 @@
 import {ComponentFixture, TestBed} from "@angular/core/testing";
-import {Component, NO_ERRORS_SCHEMA,} from '@angular/core';
+import {NO_ERRORS_SCHEMA,} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {By} from '@angular/platform-browser';
 import {FormComponent} from "./form.component";
@@ -13,7 +13,7 @@ describe('FormComponent', () => {
             TestBed.configureTestingModule({
                 imports: [FormsModule, TranslateModule.forRoot()],
                 declarations: [FormComponent],
-                schemas:[NO_ERRORS_SCHEMA]
+                schemas: [NO_ERRORS_SCHEMA]
             }).compileComponents()
         }));
         beforeEach((() => {
@@ -25,7 +25,7 @@ describe('FormComponent', () => {
             component.text = 'ddswe3sda2accx1';
             let el = fixture.debugElement.query(By.css('button')).nativeElement;
             el.click();
-            expect(component.dataArray).toContain("321");
+            expect(component.dataArray).toContain("ddswe3sda2accx1");
         });
 
         it('should not  add empty string to Array', () => {
@@ -33,12 +33,6 @@ describe('FormComponent', () => {
             let el = fixture.debugElement.query(By.css('button')).nativeElement;
             el.click();
             expect(component.dataArray).not.toContain('');
-        });
-        it('should not leters  to Array', () => {
-            component.text = 'word';
-            let el = fixture.debugElement.query(By.css('button')).nativeElement;
-            el.click();
-            expect(component.dataArray).not.toContain('word');
         });
 
         it('button should call changeHandler ', () => {

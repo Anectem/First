@@ -11,23 +11,10 @@ export class FormComponent {
 
     dataArray: string[] = [];
     text: string = '';
-    noValue:string='';
-
-    filterInput(value: string) {
-        let numb = value.match(/\d/g);
-        if (numb !== null) {
-            let value = numb.join('');
-            return value
-        } else if (value == '') {
-            return (false)
-        }
-        return('No value');
-    }
 
     changeHandler() {
-        let numb = this.filterInput(this.text);
-        if (numb) {
-            this.dataArray.push(numb);
+        if (this.text) {
+            this.dataArray.push(this.text);
         }
         this.text = '';
 

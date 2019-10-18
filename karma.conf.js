@@ -18,7 +18,7 @@ module.exports = function (config) {
             clearContext: false // leave Jasmine Spec Runner output visible in browser
         },
 
-        // list of files / patterns to load in the browser
+        // table of files / patterns to load in the browser
         coverageIstanbulReporter: {
             dir: require('path').join(__dirname, './coverage/HelloApp'),
             reports: ['html', 'lcovonly', 'text-summary'],

@@ -3,22 +3,29 @@ ul {
     padding: 0;
 }
 
-li {
-    list-style-type: none;
-    border-bottom: groove;
+table {
+    border: groove;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td {
+    border: groove;
+    width: 25em;
     text-align: center;
-    padding: 10px
+    overflow:auto;
+    height: 1.5em;
 }
 
 button {
     font-weight: normal;
     font-family: 'Comfortaa', cursive;
-    padding: auto;
-    float: right;
-    margin-right: 20px;
     border-radius: 5px;
 }
 
 button:hover {
     background-color: #c8d5fc;
+}
+.deletecol{
+    width: 25px;
 }

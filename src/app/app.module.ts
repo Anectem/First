@@ -3,8 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {FormComponent} from './form/form.component';
 import {AppComponent} from './app.component';
-import {ListComponent} from './list/list.component';
-import {TranslatePipe} from './list/options.pipe';
+import {ListComponent} from './table/table.component';
+import {TranslatePipe} from './table/translate.pipe';
 
 
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
