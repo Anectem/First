@@ -1,13 +1,13 @@
 <table>
-    <tr *ngFor="let elem of listArray let i = index">
+    <tr *ngFor="let elem of listArray; trackBy: trackById; let i = index">
         <td>
-            {{elem}}
+            {{elem.text}}
         </td>
         <td>
-            {{elem | translatePipe}}
+            {{elem.text | translatePipe}}
         </td>
         <td class="deletecol">
-            <button (click)="deleteItem(i)" [attr.title]="'demo.deleteButton' | translate">X</button>
+            <button class="delButton" (click)="deleteItem(i)" [attr.title]="'demo.deleteButton' | translate" ></button>
         </td>
     </tr>
 </table>

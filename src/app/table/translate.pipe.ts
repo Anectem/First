@@ -8,7 +8,6 @@ import {TranslateService} from "@ngx-translate/core";
 export class TranslatePipe implements PipeTransform {
     constructor(private translate: TranslateService) {
     }
-
     transform(string: any, start?: any, end?: any): any {
         let numb = string.match(/\d/g);
         let newElem = this.translate.instant('demo.noValue');

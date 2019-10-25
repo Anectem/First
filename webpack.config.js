@@ -1,9 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-var AssetsPlugin = require('assets-webpack-plugin');
-var assetsPluginInstance = new AssetsPlugin();
+const AssetsPlugin = require('assets-webpack-plugin');
+const assetsPluginInstance = new AssetsPlugin();
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -11,8 +11,8 @@ module.exports = {
         'app': './src/main.ts'
     },
     output: {
-        path: path.resolve(__dirname, './public'),     // путь к каталогу выходных файлов - папка public
-        publicPath: '/public/',
+        path: path.resolve(__dirname, 'public'),     // путь к каталогу выходных файлов - папка public
+        publicPath: '',
         filename: "[name].js"       // название создаваемого файла
     },
     resolve: {
@@ -43,18 +43,35 @@ module.exports = {
                         attrs: [':data-src']
                     }
                 }
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    {
+                        loader:'file-loader',
+                        options:{
+                            name:'[name].[ext]',
+                            outputPath:'./',
+                            useRelativePath:true
+                        }
+                    },
+                    {
+                        loader: "image-webpack-loader"
+                    }
+                ],
             }
         ]
     },
+
+
     plugins: [
-        assetsPluginInstance,
-        new CopyWebpackPlugin([
-            { from: { glob: "**/*.json" } },
-        ], { ignore: ['${relative(appPath, appResourcesFullPath)}/**'] }),
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core/,
             path.resolve(__dirname, 'src'), // каталог с исходными файлами
             {} // карта маршрутов
         ),
+        new HtmlWebpackPlugin({
+            template: "index.html"
+        })
     ]
 };

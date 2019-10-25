@@ -7,6 +7,8 @@
     "addButtonTitle": "Add element",
     "input":"Input text here",
     "noValue":"No value",
-    "deleteButton":"Delete element"
+    "deleteButton":"Delete element",
+    "visible": "show",
+    "hiden": "hiden"
   }
 }

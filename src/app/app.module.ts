@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {FormComponent} from './form/form.component';
 import {AppComponent} from './app.component';
-import {ListComponent} from './table/table.component';
+import {TableComponent} from './table/table.component';
 import {TranslatePipe} from './table/translate.pipe';
 
 
@@ -25,7 +25,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
             }
         })
     ],
-    declarations: [AppComponent, FormComponent, ListComponent, TranslatePipe],
+    declarations: [AppComponent, FormComponent, TableComponent, TranslatePipe],
     bootstrap: [AppComponent],
     providers: []
 })

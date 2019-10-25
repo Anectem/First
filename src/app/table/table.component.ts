@@ -1,25 +1,37 @@
-import {Component, forwardRef} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef} from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
+import {NG_VALUE_ACCESSOR} from "@angular/forms";
 
+type Text = {
+    id: number;
+    text: string;
+};
 
 @Component({
     selector: 'app-list',
     templateUrl: './table.component.html',
     styleUrls: ['./table.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => ListComponent),
+            useExisting: forwardRef(() => TableComponent),
             multi: true,
         }
     ]
-
 })
-export class ListComponent implements ControlValueAccessor {
-    listArray: string[] = [];
+export class TableComponent {
+    public listArray: Text[] = [];
+
+    constructor(private translate: TranslateService,
+                private cdr: ChangeDetectorRef) {
+
+    }
+
 
     writeValue(value: any): void {
         this.listArray = value;
+        this.cdr.markForCheck()
     }
 
     registerOnChange(fn: any): void {
@@ -28,10 +40,52 @@ export class ListComponent implements ControlValueAccessor {
     registerOnTouched(fn: any): void {
     }
 
+    // ngOnInit() {
+    //     console.log(`onInit`);
+    // }
+    //
+    // ngOnChanges(changes: SimpleChanges) {
+    //     console.log('Onchanges')
+    // }
+    //
+    // ngOnDestroy() {
+    //     console.log(`onDestroy`);
+    // }
+    //
+    // ngDoCheck() {
+    //     console.log(`ngDoCheck`);
+    //     console.log(this.listArray);
+    // }
+    //
+    // ngAfterViewInit() {
+    //
+    //     console.log(`ngAfterViewInit`);
+    // }
+    //
+    // ngAfterViewChecked() {
+    //
+    //     console.log(`ngAfterViewChecked`);
+    // }
+    //
+    // ngAfterContentInit() {
+    //
+    //     console.log(`ngAfterContentInit`);
+    // }
+    //
+    // ngAfterContentChecked() {
+    //
+    //     console.log(`ngAfterContentChecked`);
+    // }
+
+    trackById(index: number, elem: any) {
+        return elem.id;
+    }
+
     deleteItem(index: number) {
         this.listArray.splice(index, 1);
     }
 
 }
+
 
 

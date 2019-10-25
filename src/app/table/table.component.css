@@ -1,31 +1,38 @@
-ul {
-    margin: 0;
-    padding: 0;
-}
-
 table {
-    border: groove;
+    border: 2px solid cornflowerblue;
     border-collapse: collapse;
     margin: auto;
 }
 
-td {
-    border: groove;
-    width: 25em;
-    text-align: center;
-    overflow:auto;
-    height: 1.5em;
+tr {
+    overflow: hidden;
+    width: 600px;
+
 }
 
-button {
-    font-weight: normal;
-    font-family: 'Comfortaa', cursive;
-    border-radius: 5px;
+td {
+    border: 2px solid cornflowerblue;
+    width: 300px;
+    text-align: center;
+    height: 30px;
+    overflow: hidden
+}
+
+.delButton {
+    background: url('../../assets/images/del.png');
+    background-size: cover;
+    height: 25px;
+    width: 25px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button:hover {
-    background-color: #c8d5fc;
+    opacity: 0.5;
 }
-.deletecol{
+
+.deletecol {
     width: 25px;
 }

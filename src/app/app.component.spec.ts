@@ -1,4 +1,4 @@
-import {ComponentFixture, TestBed} from "@angular/core/testing";
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {TranslateModule} from "@ngx-translate/core";
 
@@ -8,7 +8,7 @@ describe('AppComponent', () => {
     let component: AppComponent;
     let fixture: ComponentFixture<AppComponent>;
 
-    beforeEach((() => {
+    beforeEach(async(() =>  {
         TestBed.configureTestingModule({
                 imports: [TranslateModule.forRoot()],
                 declarations: [AppComponent],
@@ -17,8 +17,8 @@ describe('AppComponent', () => {
         ).compileComponents()
     }));
     beforeEach((() => {
-        fixture = TestBed.createComponent(AppComponent);
-        component = fixture.componentInstance;
+        const fixture = TestBed.createComponent(AppComponent);
+        const component = fixture.componentInstance;
     }));
     it('should create component', () => {
         expect(component).toBeDefined();
