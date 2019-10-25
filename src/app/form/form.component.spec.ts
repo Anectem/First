@@ -9,7 +9,7 @@ import {TranslateModule} from "@ngx-translate/core";
 describe('FormComponent', () => {
         let component: FormComponent;
         let fixture: ComponentFixture<FormComponent>;
-        beforeEach( async(() => {
+        beforeEach(async(() => {
             TestBed.configureTestingModule({
                 imports: [FormsModule, TranslateModule.forRoot()],
                 declarations: [FormComponent],

@@ -31,7 +31,7 @@ export class TableComponent {
 
     writeValue(value: any): void {
         this.listArray = value;
-        this.cdr.markForCheck()
+        this.cdr.detectChanges()
     }
 
     registerOnChange(fn: any): void {

@@ -17,8 +17,8 @@ describe('AppComponent', () => {
         ).compileComponents()
     }));
     beforeEach((() => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const component = fixture.componentInstance;
+         fixture = TestBed.createComponent(AppComponent);
+         component = fixture.componentInstance;
     }));
     it('should create component', () => {
         expect(component).toBeDefined();
