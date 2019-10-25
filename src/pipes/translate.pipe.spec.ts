@@ -1,6 +1,6 @@
 import {TranslatePipe} from "./translate.pipe";
 import {async, ComponentFixture, TestBed} from "@angular/core/testing";
-import {TableComponent} from "./table.component";
+import {TableComponent} from "../app/table/table.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {By} from "@angular/platform-browser";
 

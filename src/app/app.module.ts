@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {FormComponent} from './form/form.component';
 import {AppComponent} from './app.component';
 import {TableComponent} from './table/table.component';
-import {TranslatePipe} from './table/translate.pipe';
+import {TranslatePipe} from '../pipes/translate.pipe';
 
 
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';

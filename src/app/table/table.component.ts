@@ -28,7 +28,6 @@ export class TableComponent {
 
     }
 
-
     writeValue(value: any): void {
         this.listArray = value;
         this.cdr.detectChanges()
@@ -44,9 +43,6 @@ export class TableComponent {
     //     console.log(`onInit`);
     // }
     //
-    // ngOnChanges(changes: SimpleChanges) {
-    //     console.log('Onchanges')
-    // }
     //
     // ngOnDestroy() {
     //     console.log(`onDestroy`);

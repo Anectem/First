@@ -24,7 +24,7 @@
 }
 
 .button {
-    font-weight: normal;
+    font-weight: bold;
     font-family: 'Comfortaa', cursive;
     margin-left: 20px;
     padding: 10px;
@@ -68,6 +68,7 @@ input :focus {
     font-size: 14px;
     cursor: pointer;
     font-family: 'Comfortaa', cursive;
+    font-weight: 500;
     border-radius: 5px;
     background: rgba(195, 195, 195, 0.3);
 }
