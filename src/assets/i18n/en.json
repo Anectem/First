@@ -1,5 +1,4 @@
 {
-  "demo": {
     "langChoice": "Language",
     "ru": "Russian",
     "en": "English",
@@ -10,5 +9,4 @@
     "deleteButton":"Delete element",
     "visible": "show",
     "hiden": "hiden"
-  }
 }

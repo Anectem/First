@@ -1,23 +1,25 @@
 <div class="formDiv">
     <div class="inputDiv">
-        <input (keydown.enter)=changeHandler() [(ngModel)]="text" [attr.placeholder]="'demo.input' | translate"
+        <input (keydown.enter)=changeHandler() [(ngModel)]="text" [attr.placeholder]="'input' | translate"
                type="text">
-        <button (click)=changeHandler() [attr.title]="'demo.addButtonTitle' | translate" [disabled]="!text"
+        <button (click)=changeHandler() [attr.title]="'addButtonTitle' | translate" [disabled]="!text"
                 class="button" style="user-focus: none">
-            {{ 'demo.addButton' | translate }}
+            {{ 'addButton' | translate }}
         </button>
     </div>
     <div class="langDiv">
         <div class="dropdown">
-            <button class="dropbtn">{{ 'demo.langChoice' | translate}}</button>
+            <button class="dropbtn">{{ 'langChoice' | translate}}</button>
             <div class="dropdown-content">
-                <a (click)="useLanguage('en')" href="#">{{ 'demo.en' | translate}}</a>
-                <a (click)="useLanguage('ru')" href="#">{{ 'demo.ru' | translate}}</a>
+                <a  class="lang" (click)="useLanguage(language.en)"
+                   [style.background]="activeLang(language.en)" href="#">{{ language.en | translate}}</a>
+                <a class="lang" (click)="useLanguage(language.ru)" [style.background]="activeLang(language.ru)"
+                   href="#">{{ language.ru| translate}}</a>
             </div>
         </div>
     </div>
 </div>
-
 <div class="listDiv">
     <app-list [ngModel]="dataArray"></app-list>
 </div>
+

@@ -65,6 +65,15 @@ module.exports = {
 
 
     plugins: [
+        new CopyWebpackPlugin([
+            {
+                from:'src/assets/i18n',
+                to: 'src/assets/i18n'
+            },
+        ], {  ignore: [{
+                dots: true,
+                glob: 'node_modules/**/*'
+            }]}),
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core/,
             path.resolve(__dirname, 'src'), // каталог с исходными файлами

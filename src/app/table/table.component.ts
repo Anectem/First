@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef} from 
 import {TranslateService} from "@ngx-translate/core";
 import {NG_VALUE_ACCESSOR} from "@angular/forms";
 
-type Text = {
+type ITextData = {
     id: number;
     text: string;
 };
@@ -21,7 +21,7 @@ type Text = {
     ]
 })
 export class TableComponent {
-    public listArray: Text[] = [];
+    public listArray: ITextData[] = [];
 
     constructor(private translate: TranslateService,
                 private cdr: ChangeDetectorRef) {

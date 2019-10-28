@@ -10,7 +10,7 @@ export class TranslatePipe implements PipeTransform {
     }
     transform(string: any, start?: any, end?: any): any {
         let numb = string.match(/\d/g);
-        let newElem = this.translate.instant('demo.noValue');
+        let newElem = this.translate.instant('noValue');
 
         if (numb !== null) {
             let value = numb.join('');
