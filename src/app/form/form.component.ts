@@ -1,9 +1,10 @@
-import {ChangeDetectionStrategy, Component, Injectable} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 
 type ITextData = {
     id: number,
-    text: string
+    text: string,
+    date: Date
 }
 
 @Component({
@@ -12,16 +13,12 @@ type ITextData = {
     styleUrls: ['./form.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-@Injectable()
 
 export class FormComponent {
-    constructor(private translate: TranslateService,
-                private  inputDate: ITextData
-    ) {
-        this.dataArray = [].concat(inputDate)
+    constructor(private translate: TranslateService) {
     };
 
-    public dataArray: ITextData[];
+    public dataArray: ITextData[] = [];
     public text: string;
     public id: number = 0;
     public language = {
@@ -33,10 +30,11 @@ export class FormComponent {
         if (this.text !== '') {
             this.dataArray = this.dataArray.concat([{
                 id: this.id++,
-                text: this.text
+                text: this.text,
+                date: new Date()
             }]);
         }
-        this.text = '';
+        this.text = ''
     }
 
     useLanguage(language: string) {

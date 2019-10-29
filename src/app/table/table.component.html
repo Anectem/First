@@ -6,8 +6,11 @@
         <td>
             {{elem.text | translatePipe}}
         </td>
-        <td class="deletecol">
-            <button class="delButton" (click)="deleteItem(i)" [attr.title]="'deleteButton' | translate" ></button>
+        <td class="timeCol">
+            {{elem.date | date:'H:mm' }}
+        </td>
+        <td class="deleteCol">
+            <button (click)="deleteItem(i)" [attr.title]="'deleteButton' | translate" class="delButton"></button>
         </td>
     </tr>
 </table>

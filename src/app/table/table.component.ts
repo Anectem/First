@@ -2,13 +2,9 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef} from 
 import {TranslateService} from "@ngx-translate/core";
 import {NG_VALUE_ACCESSOR} from "@angular/forms";
 
-type ITextData = {
-    id: number;
-    text: string;
-};
 
 @Component({
-    selector: 'app-list',
+    selector: 'app-table',
     templateUrl: './table.component.html',
     styleUrls: ['./table.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,7 +17,7 @@ type ITextData = {
     ]
 })
 export class TableComponent {
-    public listArray: ITextData[] = [];
+    public listArray: object[] = [];
 
     constructor(private translate: TranslateService,
                 private cdr: ChangeDetectorRef) {

@@ -51,7 +51,7 @@ input :focus {
     border: groove #eeeeee;
 }
 
-.listDiv {
+.tableDiv {
     position: relative;
     font-family: 'Comfortaa', cursive;
     margin-left: auto;
@@ -60,6 +60,7 @@ input :focus {
     height: 84vh;
     overflow: auto;
     width: 40em;
+    word-wrap:break-word;
 }
 
 .dropbtn {
@@ -109,10 +110,10 @@ input :focus {
 .dropdown:hover .dropbtn {
     background-color: #cbe3ff;
 }
-.lang{
-}
 .lang:hover{
     opacity: 0.7;
 }
+.show {display: block;}
+
 
 

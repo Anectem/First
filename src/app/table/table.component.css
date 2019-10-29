@@ -1,7 +1,3 @@
-ul {
-    margin: 0;
-    padding: 0;
-}
 
 table {
     border: 2px solid cornflowerblue;
@@ -9,18 +5,14 @@ table {
     margin: auto;
 }
 
-tr {
-    overflow: hidden;
-    width: 600px;
-
-}
-
 td {
     border: 2px solid cornflowerblue;
-    width: 300px;
+    width: 250px;
+    max-width: 250px;
     text-align: center;
     height: 30px;
-    overflow: hidden
+    text-overflow:clip;
+    overflow:hidden;
 }
 
 button {
@@ -41,6 +33,9 @@ button {
 button:hover {
     background-color: #c8d5fc;
 }
-.deletecol{
+.deleteCol{
     width: 25px;
+}
+.timeCol{
+    width: 100px;
 }
