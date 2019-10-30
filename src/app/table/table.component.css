@@ -11,8 +11,7 @@ td {
     max-width: 250px;
     text-align: center;
     height: 30px;
-    text-overflow:clip;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 button {
@@ -20,6 +19,7 @@ button {
     font-family: 'Comfortaa', cursive;
     border-radius: 5px;
 }
+
 .delButton {
     background: url('../../assets/images/del.png');
     background-size: cover;
@@ -30,12 +30,15 @@ button {
     margin-left: auto;
     margin-right: auto;
 }
+
 button:hover {
     background-color: #c8d5fc;
 }
-.deleteCol{
+
+.deleteCol {
     width: 25px;
 }
-.timeCol{
+
+.timeCol {
     width: 100px;
 }
