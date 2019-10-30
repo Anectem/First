@@ -1,8 +1,8 @@
 <div class="formDiv">
     <div class="inputDiv">
-        <input (keydown.enter)=addData(text) [(ngModel)]="text" [attr.placeholder]="'input' | translate"
+        <input (keydown.enter)=changeHandler() [(ngModel)]="text" [attr.placeholder]="'input' | translate"
                type="text">
-        <button (click)=addData(text) [attr.title]="'addButtonTitle' | translate" [disabled]="!text"
+        <button (click)=changeHandler() [attr.title]="'addButtonTitle' | translate" [disabled]="!text"
                 class="button" style="user-focus: none">
             {{ 'addButton' | translate }}
         </button>
@@ -11,19 +11,15 @@
         <div class="dropdown">
             <button class="dropbtn">{{ 'langChoice' | translate}}</button>
             <div class="dropdown-content">
-                <a (click)="this.lang.useLanguage(this.lang.language.en)"
-                   [style.background]="this.lang.activeLang(this.lang.language.en)"
-                   class="lang"
-                   href="#">{{ this.lang.language.en | translate}}</a>
-                <a (click)="this.lang.useLanguage(this.lang.language.ru)"
-                   [style.background]="this.lang.activeLang(this.lang.language.ru)"
-                   class="lang"
-                   href="#">{{ this.lang.language.ru| translate}}</a>
+                <a  class="lang" (click)="useLanguage(language.en)"
+                   [style.background]="activeLang(language.en)" href="#">{{ language.en | translate}}</a>
+                <a class="lang" (click)="useLanguage(language.ru)" [style.background]="activeLang(language.ru)"
+                   href="#">{{ language.ru| translate}}</a>
             </div>
         </div>
     </div>
 </div>
 <div class="tableDiv">
-    <app-table [ngModel]="this.arrayData.array"></app-table>
+    <app-table [ngModel]="dataArray"></app-table>
 </div>
 

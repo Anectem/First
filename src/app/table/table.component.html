@@ -1,5 +1,5 @@
 <table>
-    <tr *ngFor="let elem of tableArray; trackBy: trackById; let i = index">
+    <tr *ngFor="let elem of listArray; trackBy: trackById; let i = index">
         <td>
             {{elem.text}}
         </td>
@@ -10,8 +10,7 @@
             {{elem.date | date:'H:mm' }}
         </td>
         <td class="deleteCol">
-            <button (click)="this.arrayData.deleteItem(i)" [attr.title]="'deleteButton' | translate"
-                    class="delButton"></button>
+            <button (click)="deleteItem(i)" [attr.title]="'deleteButton' | translate" class="delButton"></button>
         </td>
     </tr>
 </table>

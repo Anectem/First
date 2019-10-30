@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {NG_VALUE_ACCESSOR} from "@angular/forms";
-import {ArrayDataService} from "../../services/array-data.service";
 
 
 @Component({
@@ -14,20 +13,19 @@ import {ArrayDataService} from "../../services/array-data.service";
             provide: NG_VALUE_ACCESSOR,
             useExisting: forwardRef(() => TableComponent),
             multi: true,
-        },
+        }
     ]
 })
 export class TableComponent {
-    public tableArray: object[] = [];
+    public listArray: object[] = [];
 
     constructor(private translate: TranslateService,
-                private cdr: ChangeDetectorRef,
-                private arrayData: ArrayDataService) {
+                private cdr: ChangeDetectorRef) {
+
     }
 
-
     writeValue(value: any): void {
-        this.tableArray = value;
+        this.listArray = value;
         this.cdr.detectChanges()
     }
 
@@ -37,9 +35,48 @@ export class TableComponent {
     registerOnTouched(fn: any): void {
     }
 
+    // ngOnInit() {
+    //     console.log(`onInit`);
+    // }
+    //
+    //
+    // ngOnDestroy() {
+    //     console.log(`onDestroy`);
+    // }
+    //
+    // ngDoCheck() {
+    //     console.log(`ngDoCheck`);
+    //     console.log(this.listArray);
+    // }
+    //
+    // ngAfterViewInit() {
+    //
+    //     console.log(`ngAfterViewInit`);
+    // }
+    //
+    // ngAfterViewChecked() {
+    //
+    //     console.log(`ngAfterViewChecked`);
+    // }
+    //
+    // ngAfterContentInit() {
+    //
+    //     console.log(`ngAfterContentInit`);
+    // }
+    //
+    // ngAfterContentChecked() {
+    //
+    //     console.log(`ngAfterContentChecked`);
+    // }
+
     trackById(index: number, elem: any) {
         return elem.id;
     }
+
+    deleteItem(index: number) {
+        this.listArray.splice(index, 1);
+    }
+
 }
 
 
