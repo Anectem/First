@@ -42,3 +42,10 @@ button:hover {
 .timeCol {
     width: 100px;
 }
+tr:nth-child(2n) {
+    background: #e7f5ff;
+}
+
+tr:hover td {
+    background: #cbe3ff;
+}
