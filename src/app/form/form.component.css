@@ -60,7 +60,7 @@ input :focus {
     height: 84vh;
     overflow: auto;
     width: 40em;
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
 
 .dropbtn {
@@ -73,7 +73,10 @@ input :focus {
     border-radius: 5px;
     background: #f3f3f0;
 }
-.dropbtn:active { border-style: outset;}
+
+.dropbtn:active {
+    border-style: outset;
+}
 
 
 .dropdown {
@@ -91,6 +94,7 @@ input :focus {
 }
 
 .dropdown-content a {
+    border: 1px solid cornflowerblue;
     font-size: 14px;
     font-weight: normal;
     font-family: 'Comfortaa', cursive;
@@ -110,10 +114,14 @@ input :focus {
 .dropdown:hover .dropbtn {
     background-color: #cbe3ff;
 }
-.lang:hover{
+
+.lang:hover {
     opacity: 0.7;
 }
-.show {display: block;}
+
+.show {
+    display: block;
+}
 
 
 

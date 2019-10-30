@@ -8,7 +8,7 @@ describe('AppComponent', () => {
     let component: AppComponent;
     let fixture: ComponentFixture<AppComponent>;
 
-    beforeEach(async(() =>  {
+    beforeEach(async(() => {
         TestBed.configureTestingModule({
                 imports: [TranslateModule.forRoot()],
                 declarations: [AppComponent],
@@ -17,8 +17,8 @@ describe('AppComponent', () => {
         ).compileComponents()
     }));
     beforeEach((() => {
-         fixture = TestBed.createComponent(AppComponent);
-         component = fixture.componentInstance;
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.componentInstance;
     }));
     it('should create component', () => {
         expect(component).toBeDefined();

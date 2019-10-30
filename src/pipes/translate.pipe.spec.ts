@@ -20,23 +20,25 @@ describe('TranslatePipe', () => {
     }));
 
     it('TranslatePipe should transform no number value', () => {
-        component.listArray = [
+        component.tableArray = [
             {
                 id: 1,
-                text: 'Lalalala'
+                text: 'Lalalala',
+                date: new Date()
             }
         ];
         fixture.detectChanges();
         let el = fixture.debugElement.query(By.css('tr:nth-of-type(1) td:nth-of-type(2)')).nativeElement;
-        expect(el.textContent).toContain('demo.noValue')
+        expect(el.textContent).toContain('noValue')
 
     });
 
     it('TranslatePipe should convert value with numbers and literals into value with only numbers', () => {
-        component.listArray = [
+        component.tableArray = [
             {
                 id: 1,
-                text: '1Lala3lala2'
+                text: '1Lala3lala2',
+                date: new Date()
             }
         ];
         fixture.detectChanges();
