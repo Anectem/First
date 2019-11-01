@@ -1,26 +1,25 @@
 import {Injectable} from "@angular/core";
+import 'zone.js'
 
-type ITextData = {
+export type ITextData = {
     id: number,
     text: string,
     date: Date
 }
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
+
 export class ArrayDataService {
     public array: ITextData[] = [];
     public id: number = 0;
 
-    addData(text: string) {
+    addItem(text: string) {
         if (text !== '' && text !== undefined) {
-            this.array = this.array.concat([{
-                    id: this.id++,
-                    text: text,
-                    date: new Date()
-                }]
-            );
+            this.array.push({
+                id: this.id++,
+                text: text,
+                date: new Date()
+            });
         }
     }
 

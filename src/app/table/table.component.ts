@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {NG_VALUE_ACCESSOR} from "@angular/forms";
-import {ArrayDataService} from "../../services/array-data.service";
+import {ArrayDataService, ITextData} from "../../services/array-data.service";
 
 
 @Component({
@@ -14,21 +14,23 @@ import {ArrayDataService} from "../../services/array-data.service";
             provide: NG_VALUE_ACCESSOR,
             useExisting: forwardRef(() => TableComponent),
             multi: true,
-        },
+        }
     ]
 })
 export class TableComponent {
-    public tableArray: object[] = [];
+    public tableArray: ITextData[] = [];
 
     constructor(private translate: TranslateService,
                 private cdr: ChangeDetectorRef,
-                private arrayData: ArrayDataService) {
+                private arrayData: ArrayDataService
+    ) {
+    };
+
+    ngDoCheck() {
+        this.cdr.detectChanges()
     }
-
-
     writeValue(value: any): void {
         this.tableArray = value;
-        this.cdr.detectChanges()
     }
 
     registerOnChange(fn: any): void {
@@ -40,7 +42,10 @@ export class TableComponent {
     trackById(index: number, elem: any) {
         return elem.id;
     }
-}
+    deleteItem (index:number){
+        this.arrayData.deleteItem(index);
+    }
 
+}
 
 

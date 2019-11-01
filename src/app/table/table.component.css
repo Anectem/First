@@ -2,22 +2,23 @@
 table {
     border: 2px solid cornflowerblue;
     border-collapse: collapse;
-    margin: auto;
 }
 
 td {
     border: 2px solid cornflowerblue;
-    width: 250px;
-    max-width: 250px;
+    width: 200px;
+    max-width: 200px;
     text-align: center;
     height: 30px;
-    overflow: hidden;
+    word-break: break-all;
 }
 
 button {
     font-weight: normal;
     font-family: 'Comfortaa', cursive;
     border-radius: 5px;
+    cursor: pointer;
+
 }
 
 .delButton {
@@ -39,9 +40,6 @@ button:hover {
     width: 25px;
 }
 
-.timeCol {
-    width: 100px;
-}
 tr:nth-child(2n) {
     background: #e7f5ff;
 }

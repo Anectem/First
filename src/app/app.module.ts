@@ -10,6 +10,7 @@ import {TranslatePipe} from '../pipes/translate.pipe';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {ArrayDataService} from "../services/array-data.service";
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     ],
     declarations: [AppComponent, FormComponent, TableComponent, TranslatePipe],
     bootstrap: [AppComponent],
-    providers: []
+    providers: [ArrayDataService]
 })
 export class AppModule {
 }

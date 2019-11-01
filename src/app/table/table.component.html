@@ -6,12 +6,13 @@
         <td>
             {{elem.text | translatePipe}}
         </td>
-        <td class="timeCol">
-            {{elem.date | date:'H:mm' }}
+        <td>
+            {{elem.date | date:'dd.MM.yyyy H:mm:ss' }}
         </td>
         <td class="deleteCol">
-            <button (click)="this.arrayData.deleteItem(i)" [attr.title]="'deleteButton' | translate"
+            <button (click)="deleteItem(i)" [attr.title]="'deleteButton' | translate"
                     class="delButton"></button>
         </td>
     </tr>
 </table>
+

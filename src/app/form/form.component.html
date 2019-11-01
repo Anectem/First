@@ -1,29 +1,25 @@
-<div class="formDiv">
-    <div class="inputDiv">
-        <input (keydown.enter)=addData(text) [(ngModel)]="text" [attr.placeholder]="'input' | translate"
-               type="text">
-        <button (click)=addData(text) [attr.title]="'addButtonTitle' | translate" [disabled]="!text"
-                class="button" style="user-focus: none">
-            {{ 'addButton' | translate }}
-        </button>
-    </div>
-    <div class="langDiv">
-        <div class="dropdown">
-            <button class="dropbtn">{{ 'langChoice' | translate}}</button>
-            <div class="dropdown-content">
-                <a (click)="this.lang.useLanguage(this.lang.language.en)"
-                   [style.background]="this.lang.activeLang(this.lang.language.en)"
-                   class="lang"
-                   href="#">{{ this.lang.language.en | translate}}</a>
-                <a (click)="this.lang.useLanguage(this.lang.language.ru)"
-                   [style.background]="this.lang.activeLang(this.lang.language.ru)"
-                   class="lang"
-                   href="#">{{ this.lang.language.ru| translate}}</a>
+<div class="flex">
+    <div class="formDiv">
+        <div class="inputDiv">
+            <input (keydown.enter)=addItem(text) [(ngModel)]="text" [attr.placeholder]="'input' | translate"
+                   type="text">
+            <button (click)=addItem(text) [attr.title]="'addButtonTitle' | translate" [disabled]="!text"
+                    class="button" style="user-focus: none">
+                {{ 'addButton' | translate }}
+            </button>
+        </div>
+        <div class="langDiv">
+            <div class="dropdown">`
+                <button class="dropbtn">{{ 'langChoice' | translate}}</button>
+                <div class="dropdown-content">
+                    <a (click)="changeLanguage(elem)"
+                       *ngFor="let elem of Language " [ngClass]="{'activeLang': elem.active, 'deactiveLang': !elem.active}"
+                       class="lang">{{ elem.lang | translate}} </a>
+                </div>
             </div>
         </div>
     </div>
+    <div class="tableDiv">
+        <app-table [ngModel]="this.arrayData.array"></app-table>
+    </div>
 </div>
-<div class="tableDiv">
-    <app-table [ngModel]="this.arrayData.array"></app-table>
-</div>
-
