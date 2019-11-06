@@ -11,6 +11,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ArrayDataService} from "../services/array-data.service";
+import { SelectComponent } from './select/select.component';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import {ArrayDataService} from "../services/array-data.service";
             }
         })
     ],
-    declarations: [AppComponent, FormComponent, TableComponent, TranslatePipe],
+    declarations: [AppComponent, FormComponent, TableComponent, TranslatePipe, SelectComponent],
     bootstrap: [AppComponent],
     providers: [ArrayDataService]
 })

@@ -5,7 +5,7 @@
 //     beforeEach(() => {
 //         service = new ArrayDataService()
 //     });
-//     it('add method shoud add value to array', () => {
+//     it('add method should add value to array', () => {
 //         service.addItem('data array service testing');
 //         expect(service.array[0].text).toBe('data array service testing')
 //     });

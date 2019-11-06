@@ -1,0 +1,36 @@
+a{
+    display: flex;
+    display: -webkit-flex;
+    align-items:center;
+    font-size: 15px;
+    padding: 5px;
+    font-family: 'Comfortaa', cursive;
+    margin:0 auto;
+    justify-content: center;
+}
+option{
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    overflow: hidden;
+    width: 100px;
+}
+select{
+    font-family: 'Comfortaa', cursive;
+    display: flex;
+    display: -webkit-flex;
+    align-items:center;
+    justify-content: right;
+    width: 100px;
+    border: 1px solid cornflowerblue;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.activeLang{
+    background:#cbe3ff ;
+}
+.NotActiveLang{
+    background: #000000;;
+}
+

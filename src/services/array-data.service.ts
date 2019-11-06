@@ -1,7 +1,13 @@
 import {Injectable} from "@angular/core";
 import 'zone.js'
 
-export type ITextData = {
+/**
+ * Кастомный тип даты для элементов содержащихся в массиве
+ * @param {number} id - id of element
+ * @param {string} text - text of element.
+ * @param {Date} Date - added to array Date.
+ */
+export type iTextData = {
     id: number,
     text: string,
     date: Date
@@ -10,9 +16,12 @@ export type ITextData = {
 @Injectable()
 
 export class ArrayDataService {
-    public array: ITextData[] = [];
+    public array: iTextData[] = [];
     public id: number = 0;
 
+    /*
+        Add element to an array without copy original array
+    */
     addItem(text: string) {
         if (text !== '' && text !== undefined) {
             this.array.push({
@@ -23,6 +32,9 @@ export class ArrayDataService {
         }
     }
 
+    /*
+      Delete element from an array without copy original array
+  */
     deleteItem(index: number) {
         this.array.splice(index, 1);
     }

@@ -14,9 +14,7 @@ describe('AppComponent', () => {
                 declarations: [AppComponent],
                 schemas: [NO_ERRORS_SCHEMA]
             },
-        ).compileComponents()
-    }));
-    beforeEach((() => {
+        ).compileComponents();
         fixture = TestBed.createComponent(AppComponent);
         component = fixture.componentInstance;
     }));

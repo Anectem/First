@@ -8,5 +8,6 @@
     "noValue":"No value",
     "deleteButton":"Delete element",
     "visible": "show",
-    "hiden": "hiden"
+    "hidden": "hidden",
+    "choose": "Choose"
 }

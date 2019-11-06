@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, forwardRef} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {NG_VALUE_ACCESSOR} from "@angular/forms";
-import {ArrayDataService, ITextData} from "../../services/array-data.service";
+import {ArrayDataService, iTextData} from "../../services/array-data.service";
 
 
 @Component({
@@ -18,7 +18,7 @@ import {ArrayDataService, ITextData} from "../../services/array-data.service";
     ]
 })
 export class TableComponent {
-    public tableArray: ITextData[] = [];
+    public tableArray: iTextData[] = [];
 
     constructor(private translate: TranslateService,
                 private cdr: ChangeDetectorRef,
@@ -27,7 +27,7 @@ export class TableComponent {
     };
 
     ngDoCheck() {
-        this.cdr.detectChanges()
+        this.cdr.detectChanges();
     }
     writeValue(value: any): void {
         this.tableArray = value;

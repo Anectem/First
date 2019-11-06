@@ -1,0 +1,9 @@
+<label>
+    <a>{{'langChoice' | translate}} </a>
+    <select (ngModelChange)="changeLanguage($event)" [ngModel]="getDefaultLanguage(languages)">
+        <option *ngFor="let lang of languages;"
+                [ngValue]="lang">
+            {{ lang | translate}}
+        </option>
+    </select>
+</label>

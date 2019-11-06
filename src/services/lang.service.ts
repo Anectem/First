@@ -1,31 +1,27 @@
 import {Injectable} from "@angular/core";
 import {TranslateService} from "@ngx-translate/core";
 
-export type Ilang ={
-    lang:string,
-    active:boolean
-}
+
 @Injectable()
 
 export class LangService {
     constructor(private translate: TranslateService) {
+        translate.addLangs(['en', 'ru']);
         translate.setDefaultLang('en');
     };
 
-    public Language : Ilang[]= [
-        {
-            lang: 'en',
-            active: true
-        }, {
-            lang: 'ru',
-            active: false
-        }
-    ];
+    public languages: string [] = this.translate.getLangs();
 
-    changeLanguage(language: Ilang) {
-        this.translate.use(language.lang);
-        if (this.translate.currentLang === language.lang){
-            this
-        }
+
+    getDefaultLanguage (languages:string[]){
+       for (let i=0; i<languages.length; i++){
+           if (languages[i] === this.translate.defaultLang ){
+               return languages[i]
+           }
+       }
+    };
+
+    changeLanguage(language: string) {
+        this.translate.use(language);
     }
 }

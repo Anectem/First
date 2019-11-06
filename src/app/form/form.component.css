@@ -23,6 +23,7 @@
     display: -webkit-flex;
     align-items: center;
     flex: 1;
+    flex-shrink: 0;
 }
 
 .langDiv {
@@ -30,7 +31,8 @@
     display: -webkit-flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 10px
+    margin-right: 10px;
+    flex-basis: 50px;
 }
 
 .tableDiv {
@@ -47,9 +49,9 @@
     margin-left: 20px;
     padding: 10px;
     border-radius: 5px;
-    background: #f3f3f0;
     cursor: pointer;
-
+    background: white;
+    border: 1px solid cornflowerblue;
 }
 
 .button:hover {
@@ -57,7 +59,7 @@
 }
 
 .button[disabled]:hover {
-    background: #f3f3f0;
+    background: white;
 }
 
 input {
@@ -70,72 +72,4 @@ input {
 input :focus {
     border: groove #eeeeee;
 }
-
-
-.dropbtn {
-    padding: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    font-family: 'Comfortaa', cursive;
-    width: 110px;
-    border-radius: 5px;
-    background: #f3f3f0;
-}
-
-.dropbtn:active {
-    border-style: outset;
-}
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-
-}
-
-.dropdown-content {
-    right: 0;
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 110px;
-    z-index: 1;
-    cursor: pointer;
-
-}
-
-.dropdown-content a {
-    border: 0.5px solid cornflowerblue;
-    font-size: 14px;
-    font-weight: normal;
-    font-family: 'Comfortaa', cursive;
-    color: black;
-    padding: 10px 10px;
-    text-decoration: none;
-    display: block;
-    cursor: pointer;
-
-}
-.dropdown-content a:hover {
-    opacity: 0.7;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    margin: 0;
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #cbe3ff;
-}
-.activeLang{
-    background:#cbe3ff ;
-}
-.deactiveLang{
-    background: #f3f3f0;;
-}
-
 

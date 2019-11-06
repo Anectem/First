@@ -5,10 +5,9 @@
 //
 // describe('LangService', () => {
 //     let service: LangService;
-//     let valueServiceSpy: jasmine.SpyObj<TranslateService>;
-//
+//     let translate: TranslateService;
 //     beforeEach(() => {
-//         const spy = jasmine.createSpyObj('TranslateService', ['use']);
+//         const spy = jasmine.createSpyObj('TranslateService', ['use', 'setDefaultLang']);
 //         TestBed.configureTestingModule({
 //             providers: [LangService, {provide: TranslateService, useValue: spy}],
 //             imports: [TranslateModule.forRoot()]
@@ -17,11 +16,11 @@
 //
 //     it('lang method should change language', () => {
 //         service = TestBed.get(LangService);
-//         valueServiceSpy = TestBed.get(TranslateService);
-//         service.useLanguage('ru');
-//         expect(valueServiceSpy.use).toHaveBeenCalledWith('ru');
+//         translate = TestBed.get(TranslateService);
+//         service.changeLanguage({lang: 'ru', active: false});
+//         expect(translate.use).toHaveBeenCalledWith('ru');
 //     })
 // });
 //
-//
-//
+
+

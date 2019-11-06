@@ -1,25 +1,20 @@
 <div class="flex">
     <div class="formDiv">
         <div class="inputDiv">
-            <input (keydown.enter)=addItem(text) [(ngModel)]="text" [attr.placeholder]="'input' | translate"
-                   type="text">
+            <label>
+                <input (keydown.enter)=addItem(text) [(ngModel)]="text" [attr.placeholder]="'input' | translate"
+                       type="text">
+            </label>
             <button (click)=addItem(text) [attr.title]="'addButtonTitle' | translate" [disabled]="!text"
                     class="button" style="user-focus: none">
                 {{ 'addButton' | translate }}
             </button>
         </div>
         <div class="langDiv">
-            <div class="dropdown">`
-                <button class="dropbtn">{{ 'langChoice' | translate}}</button>
-                <div class="dropdown-content">
-                    <a (click)="changeLanguage(elem)"
-                       *ngFor="let elem of Language " [ngClass]="{'activeLang': elem.active, 'deactiveLang': !elem.active}"
-                       class="lang">{{ elem.lang | translate}} </a>
-                </div>
-            </div>
+            <app-select></app-select>
         </div>
     </div>
     <div class="tableDiv">
-        <app-table [ngModel]="this.arrayData.array"></app-table>
+        <app-table [ngModel]="array"></app-table>
     </div>
 </div>
